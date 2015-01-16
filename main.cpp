@@ -25,16 +25,16 @@ int main()
         cout << x << " occurs " << n << " times." << endl;
     }
 
-//    Multiset ms;
-//    ms.insert("cinnamon");
-//    ms.insert("galangal");
-//    ms.insert("cinnamon");
-//    string s1;
-//    int n1 = ms.get(1, s1);
-//    assert((s1 == "cinnamon"  &&  n1 == 2)  ||  (s1 == "galangal"  &&  n1 == 1));
-//    string s2;
-//    int n2 = ms.get(1, s2);
-//    assert(s2 == s1  &&  n2 == n1);
+    Multiset mr;
+    mr.insert("cinnamon");
+    mr.insert("galangal");
+    mr.insert("cinnamon");
+    string s1;
+    int n1 = mr.get(1, s1);
+    assert((s1 == "cinnamon"  &&  n1 == 2)  ||  (s1 == "galangal"  &&  n1 == 1));
+    string s2;
+    int n2 = mr.get(1, s2);
+    assert(s2 == s1  &&  n2 == n1);
     
     cout<<"pass";
 }

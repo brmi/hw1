@@ -50,37 +50,47 @@ int Multiset::uniqueSize() const
     {
         return 0;
     }
+    
+    int numUnique=0;
 
-    int notUnique=0;
-    int numUnique=1;
-    int j=0;
-    for (int i=1; i<m_size; i++)
+    for (int i=0; i<m_size; i++)
     {
-        while(j<m_size)
+        if (m_arr[i].m_item!="" && m_arr[i].m_count!=0)
         {
-            if(m_arr[i].m_item==m_arr[j].m_item && &m_arr[i].m_item!=&m_arr[j].m_item)
-            {
-                
-                j=0;
-                notUnique=1;
-                
-            }
-            j++;
-            if(notUnique==1)
-            {
-                notUnique=0;
-                break;
-            }
-            if(j==m_size) //something wrong with this line
-            {
-                numUnique++;
-                j=0;
-                break;
-                
-            }
+            numUnique++;
         }
-        
     }
+    
+//    int notUnique=0;
+//    int numUnique=1;
+//    int j=0;
+//    for (int i=1; i<m_size; i++)
+//    {
+//        while(j<m_size)
+//        {
+//            if(m_arr[i].m_item==m_arr[j].m_item && &m_arr[i].m_item!=&m_arr[j].m_item)
+//            {
+//                
+//                j=0;
+//                notUnique=1;
+//                
+//            }
+//            j++;
+//            if(notUnique==1)
+//            {
+//                notUnique=0;
+//                break;
+//            }
+//            if(j==m_size) //something wrong
+//            {
+//                numUnique++;
+//                j=0;
+//                break;
+//                
+//            }
+//        }
+//        
+//    }
     return numUnique;
 }
 
@@ -119,8 +129,8 @@ bool Multiset::insert(const ItemType& value)
     }
     else
     {
-        m_arr[uniqueSize()].m_count++;
         m_arr[uniqueSize()].m_item=value;
+        m_arr[uniqueSize()].m_count++;
         m_size++;
     }
     
