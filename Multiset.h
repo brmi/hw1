@@ -10,7 +10,7 @@
 #define hw1_Multiset_h
 
 #include <iostream>
-typedef std::string ItemType; //maybe move later, ask ta where is best to put this
+typedef unsigned long ItemType; //have unsigned long when you turn in the project
 
 const int DEFAULT_MAX_ITEMS = 200;
 
@@ -63,18 +63,9 @@ public:
 
     
 private:
-    
-    /*
-     Now that you have defined an interface for a multiset class where the item type can be easily changed, implement the class and all its member functions in such a way that the items in a multiset are contained in a data member that is an array. (Notice we said an array, not a pointer. It's not until problem 5 of this homework that you'll deal with a dynamically allocated array.) A multiset must be able to hold a maximum of DEFAULT_MAX_ITEMS distinct items, where
-     
-     const int DEFAULT_MAX_ITEMS = 200;
-     
-     (Hint: Define a structure type containing a member of type ItemType and a member of type int (representing a count). Have Multiset's array data member be an array of these structures.)
-     */
-    
-    //idk how this works?? how would i access the data members ....
 
-    struct multArray //where should i put this
+
+    struct multArray 
     {
         ItemType m_item; //just pretend this is the name of the dude visiting
         int m_count; //this is the number of times that person or item has visited the site
@@ -86,8 +77,7 @@ private:
     };
     
     
-    int m_size; //this should be the size of the array
-    //ItemType m_arr[DEFAULT_MAX_ITEMS];
+    int m_size; // the num of items
     
     multArray m_arr[DEFAULT_MAX_ITEMS];
     
