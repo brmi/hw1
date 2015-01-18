@@ -32,7 +32,6 @@ public:
     
 private:
     Multiset m_multiset;
-    int m_size;
     
     
 };

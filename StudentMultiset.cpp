@@ -10,8 +10,9 @@
 using namespace std;
 
 // Create an empty student multiset.
-StudentMultiset::StudentMultiset(): m_size(0)
+StudentMultiset::StudentMultiset()
 {
+    //default constructor of class type should construct itself by using default constructor of multiset
 }
 
 
@@ -21,7 +22,6 @@ bool StudentMultiset::add(ItemType id)
 {
     if(m_multiset.insert(id))
     {
-        m_size=m_multiset.size();
         return true;
     }
     
@@ -33,7 +33,7 @@ bool StudentMultiset::add(ItemType id)
 // added n times, it contributes n to the size.
 int StudentMultiset::size() const
 {
-    return m_size;
+    return m_multiset.size();
 }
 
 
@@ -43,6 +43,9 @@ void StudentMultiset::print() const
 {
     for (int i=0; i< m_multiset.uniqueSize(); i++)
     {
+        unsigned long x;
+        m_multiset.get(i, x);
+        cout<<x<<endl;
         
     }
 }
